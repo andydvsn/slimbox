@@ -1,6 +1,6 @@
 /*!
-	Slimbox v2.05 - The ultimate lightweight Lightbox clone for jQuery
-	(c) 2007-2013 Christophe Beyls <http://www.digitalia.be>
+	Slimbox v2 - The ultimate lightweight Lightbox clone for jQuery
+	(c) 2007-2014 Christophe Beyls <http://www.digitalia.be>
 	MIT-style license.
 */
 
@@ -190,9 +190,10 @@
 
 	function animateBox() {
 		center.className = "";
-		$(image).css({backgroundImage: "url(" + activeURL + ")", visibility: "hidden", display: ""});
-		$(sizer).width(preload.width);
-		$([sizer, prevLink, nextLink]).height(preload.height);
+					
+		$(image).css({backgroundImage: "url(" + activeURL + ")", backgroundSize: Math.floor(preload.width/2) + "px " + Math.floor(preload.height/2) + "px", visibility: "hidden", display: ""});
+		$(sizer).width(preload.width/2);
+		$([sizer, prevLink, nextLink]).height(preload.height/2);
 
 		$(caption).html(images[activeImage][1] || "");
 		$(number).html((((images.length > 1) && options.counterText) || "").replace(/{x}/, activeImage + 1).replace(/{y}/, images.length));
