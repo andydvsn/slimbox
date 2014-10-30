@@ -18,9 +18,22 @@
 	background-color: #fff;
 }
 
-.lbLoading {
-	background: #fff url(loading.gif) no-repeat center;
+#lbCenter {
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
 }
+
+#lbBottomContainer {
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+
+
+/*
+.lbLoading {
+	background: #fff url(/imgs/loader.gif) no-repeat center;
+}
+*/
 
 #lbImage {
 	position: absolute;
@@ -42,16 +55,56 @@
 	left: 0;
 }
 
-#lbPrevLink:hover {
-	background: transparent url(prevlabel.gif) no-repeat 0 15%;
-}
-
 #lbNextLink {
 	right: 0;
 }
 
+#lbPrevLink:hover,
 #lbNextLink:hover {
-	background: transparent url(nextlabel.gif) no-repeat 100% 15%;
+	border-bottom: none;
+}
+
+#lbPrevText, #lbNextText {
+	visibility: hidden;
+	color: #333;
+	font-size: 11pt;
+	display: inline-block;
+	margin-top: 80px;
+	padding: 15px 20px;
+	background-color: rgba(255,255,255,0.9);
+}
+
+#lbPrevLink:hover > #lbPrevText,
+#lbNextLink:hover > #lbNextText {
+	visibility: visible;
+
+}
+
+#lbPrevText {
+	float: left;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+
+#lbNextText {
+	float: right;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+#lbLinkIndPrev {
+	display: inline-block;
+	/* Safari */
+	-webkit-transform: rotate(180deg);
+	/* Firefox */
+	-moz-transform: rotate(180deg);
+	/* IE */
+	-ms-transform: rotate(180deg);
+	/* Opera */
+	-o-transform: rotate(180deg);
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
 }
 
 #lbBottom {
@@ -60,22 +113,25 @@
 	color: #666;
 	line-height: 1.4em;
 	text-align: left;
-	border: 10px solid #fff;
+	padding: 0 0 10px 12px;
 	border-top-style: none;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
 }
 
 #lbCloseLink {
-	display: block;
 	float: right;
-	width: 66px;
-	height: 22px;
-	background: transparent url(closelabel.gif) no-repeat center;
-	margin: 5px 0;
+	color: #333;
+	font-size: 20pt;
+	font-weight: bold;
+	padding: 0 20px 15px 0;
 	outline: none;
+	border-bottom: none;
+	clear: both;
 }
 
 #lbCaption, #lbNumber {
-	margin-right: 71px;
+	margin-right: 20px;
 }
 
 #lbCaption {

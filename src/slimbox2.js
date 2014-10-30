@@ -32,14 +32,14 @@
 
 		image = $('<div id="lbImage" />').appendTo(center).append(
 			sizer = $('<div style="position: relative;" />').append([
-				prevLink = $('<a id="lbPrevLink" href="#" />').click(previous)[0],
-				nextLink = $('<a id="lbNextLink" href="#" />').click(next)[0]
+				prevLink = $('<a id="lbPrevLink" href="#"><div id="lbPrevText"><span id="lbLinkIndPrev">&#10140;</span> PREV</div></a>').click(previous)[0],
+				nextLink = $('<a id="lbNextLink" href="#"><div id="lbNextText">NEXT <span id="lbLinkIndNext">&#10140;</span></div></a>').click(next)[0]
 			])[0]
 		)[0];
 
 		bottom = $('<div id="lbBottom" />').appendTo(bottomContainer).append([
-			$('<a id="lbCloseLink" href="#" />').click(close)[0],
 			caption = $('<div id="lbCaption" />')[0],
+			$('<a id="lbCloseLink" href="#">&#215;</a>').click(close)[0],
 			number = $('<div id="lbNumber" />')[0],
 			$('<div style="clear: both;" />')[0]
 		])[0];
